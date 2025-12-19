@@ -2,6 +2,11 @@
 
 This is an evil library that automatically disposes of objects marked with a specific attribute. Of course, **you should dispose objects on your own responsibility**, but if you are lazy, you may feel this library useful.
 
+## Features
+- Automatically disposes of properties and fields which implements IDisposable and marked with the `OwnedAttribute`.
+- Supports both reference types and Nullable value types.
+- Sets reference types or Nullable types to null after disposing them to help with garbage collection.
+
 ## Usage
 1. Mark properties or fields that you want to be automatically disposed with the `OwnedAttribute`.
 
@@ -37,6 +42,5 @@ public class MyClass {
 ## Note
 - This library uses reflection, so it may have performance implications. Use it judiciously.
 - This library only disposes of properties and fields marked with the `OwnedAttribute`. Make sure to mark all relevant members.
-- This library sets reference types or Nullable types to null after disposing them to help with garbage collection.
 - Use this library at your own risk. It is recommended to understand the implications of automatic disposal before using it in production code.
 - Anyway, please dispose of objects on your own responsibility!
